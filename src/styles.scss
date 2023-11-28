@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+// Media screem mixin
+@mixin for-phone-only {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) {
+        @content;
+    }
+}
+
+
+body {
+   
+    font-family: Ubuntu, sans-serif !important;
+    // max-height: 100vh;
+}
+
+.body {
+    border: 4px solid rgb(46, 157, 255);
+    height: 100vh;
+    position: fixed;
+    overflow: auto;
+
+    @include for-phone-only(){
+        position: relative;
+    }
+}
+
+
