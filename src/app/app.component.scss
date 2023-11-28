@@ -7,7 +7,7 @@
 }
 
 @mixin for-tablet-portrait-up {
-    @media (min-width: 600px) {
+    @media (min-width: 600px) and (max-width : 900px){
         @content;
     }
 }
@@ -97,6 +97,29 @@
 // .body-content::-webkit-scrollbar{
 // display: none;
 // }
+
+#sidebar {
+    @include for-phone-only(){
+        z-index: 1;
+        height: calc(100vh - 70px);
+        box-shadow: #000a 0px 5px 10px 0px;
+        margin-top: 66px;
+        position: fixed !important;
+        width: 80vw;
+    }
+
+    @include for-tablet-portrait-up(){
+            z-index: 1;
+            height: calc(100vh - 70px);
+            box-shadow: #000a 0px 5px 10px 0px;
+            margin-top: 66px;
+            position: fixed !important;
+            width: 50vw;
+       
+    }
+
+  
+}
 
 #sidebar::-webkit-scrollbar {
     display: none;

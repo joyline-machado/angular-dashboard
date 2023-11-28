@@ -53,7 +53,11 @@ export class PieBarChartComponent implements OnInit {
             }
           },
           data: [
-            { value: 63},
+            { 
+              value: 63, 
+              itemStyle:{
+                color: '#000'
+              }},
             {
               // make an record to fill the bottom 50%
               value: 10 + 20 + 20 + 20 + 10,
