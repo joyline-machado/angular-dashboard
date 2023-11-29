@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BarChart } from "echarts/charts";
 import { TooltipComponent, GridComponent, LegendComponent } from "echarts/components";
 import { EChartsOption } from 'echarts';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-bar-chart',
@@ -15,13 +16,16 @@ export class BarChartComponent implements OnInit {
   // echartsOptions: object = {};
   echartsOptions: EChartsOption = {};
 
-  constructor() {
+  constructor( private http: HttpClient) {
     // echart
     this.echartsExtentions = [BarChart, TooltipComponent, GridComponent, LegendComponent];
 
   }
 
   ngOnInit(): void {
+
+
+
     this.echartsOptions = {
       tooltip: {
         trigger: 'axis',
@@ -89,7 +93,11 @@ export class BarChartComponent implements OnInit {
         
       ]
     }
+
+
   }
+
+
 
 
 

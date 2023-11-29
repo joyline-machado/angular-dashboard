@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
 // Media screem mixin
 @mixin for-phone-only {
     @media (max-width: 599px) {
@@ -33,7 +34,7 @@
 
 
 body {
-   
+
     font-family: Ubuntu, sans-serif !important;
     // max-height: 100vh;
 }
@@ -44,9 +45,24 @@ body {
     position: fixed;
     overflow: auto;
 
-    @include for-phone-only(){
+    @include for-phone-only() {
         position: relative;
     }
 }
 
+.navbar-nav {
+    .nav-item {
+        a {
+            height: 50px;
+            padding-top: 12px !important;
+        }
 
+    }
+}
+
+.nav-link.active {
+    background-color: #fff !important;
+    border-left: 5px solid #2e9dff;
+    border-radius: 0;
+
+}
