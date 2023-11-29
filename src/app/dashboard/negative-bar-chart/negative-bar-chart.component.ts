@@ -41,7 +41,7 @@ export class NegativeBarChartComponent  implements OnInit {
         {
           type: 'category',
           
-          // data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data: ['', '', '', '', '', '', '','', '', '', '', '', '', '', ''],
           axisTick: {
             alignWithLabel: false,
             show: false
