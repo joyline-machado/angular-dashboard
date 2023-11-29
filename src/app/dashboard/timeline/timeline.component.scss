@@ -16,13 +16,37 @@ ul.timeline > li {
     margin: 20px 0;
     padding-left: 20px;
 }
-ul.timeline > li:before {
+ul.timeline > .green:before {
     content: ' ';
     background: white;
     display: inline-block;
     position: absolute;
     border-radius: 50%;
-    border: 3px solid #31f82a;
+    border: 3px solid #86c541;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+ul.timeline > .blue:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #1d8ecd;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+ul.timeline > .yellow:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #f5a81d;
     left: 20px;
     width: 20px;
     height: 20px;
