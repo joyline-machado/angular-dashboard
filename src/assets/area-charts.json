@@ -1,0 +1,94 @@
+{
+    "earning" : [
+        {
+            "value": 6
+        },
+        {
+            "value": 8
+        },
+        {
+            "value": 8
+        },
+        {
+            "value": 5
+        },
+        {
+            "value": 1
+        },
+        {
+            "value": 4
+        },
+        {
+            "value": 7
+        }
+    ],
+    "sales" : [
+        {
+            "value": 9
+        },
+        {
+            "value": 6
+        },
+        {
+            "value": 3
+        },
+        {
+            "value": 5
+        },
+        {
+            "value": 2
+        },
+        {
+            "value": 7
+        },
+        {
+            "value": 4
+        }
+    ],
+    "visits":[
+        {
+            "value" : 2
+        },
+        {
+            "value" : 4
+        },
+        {
+            "value" : 8
+        },
+        {
+            "value" : 5
+        },
+        {
+            "value" : 7
+        },
+        {
+            "value" : 4
+        },
+        {
+            "value" : 3
+        }
+    ],
+    "likes" : [
+        {
+            "value" : 6
+        },
+        {
+            "value" : 4
+        },
+        {
+            "value" : 2
+        },
+        {
+            "value" : 5
+        },
+        {
+            "value" : 1
+        },
+        {
+            "value" : 4
+        },
+        {
+            "value" :  7
+        }
+    ]
+}

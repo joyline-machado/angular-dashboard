@@ -1,0 +1,89 @@
+{
+    "bar-chart": [
+        {
+            "category": "Q1",
+            "seris": [
+                {
+                    "name": "Mobile",
+                    "value": 2350
+                },
+                {
+                    "name": "Laptop",
+                    "value": 2341
+                },
+                {
+                    "name": "Computer",
+                    "value": 1212
+                }
+            ]
+        },
+        {
+            "category": "Q2",
+            "seris": [
+                {
+                    "name": "Mobile",
+                    "value": 3205
+                },
+                {
+                    "name": "Laptop",
+                    "value": 2583
+                },
+                {
+                    "name": "Computer",
+                    "value": 5214
+                }
+            ]
+        },
+        {
+            "category": "Q3",
+            "seris": [
+                {
+                    "name": "Mobile",
+                    "value": 4520
+                },
+                {
+                    "name": "Laptop",
+                    "value": 1592
+                },
+                {
+                    "name": "Computer",
+                    "value": 2325
+                }
+            ]
+        },
+        {
+            "category": "Q4",
+            "seris": [
+                {
+                    "name": "Mobile",
+                    "value": 2351
+                },
+                {
+                    "name": "Laptop",
+                    "value": 2674
+                },
+                {
+                    "name": "Computer",
+                    "value": 4235
+                }
+            ]
+        },
+        {
+            "category": "Q5",
+            "seris": [
+                {
+                    "name": "Mobile",
+                    "value": 5623
+                },
+                {
+                    "name": "Laptop",
+                    "value": 2323
+                },
+                {
+                    "name": "Computer",
+                    "value": 2519
+                }
+            ]
+        }
+    ]
+}

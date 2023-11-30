@@ -10,95 +10,86 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./bar-chart.component.scss'],
 })
 export class BarChartComponent implements OnInit {
+  chartData: any;
+  category: any;
 
   // echart
   readonly echartsExtentions: any[];
   // echartsOptions: object = {};
   echartsOptions: EChartsOption = {};
 
-  constructor( private http: HttpClient) {
+  constructor(private http: HttpClient) {
     // echart
     this.echartsExtentions = [BarChart, TooltipComponent, GridComponent, LegendComponent];
 
   }
 
   ngOnInit(): void {
+    const url: string = '../../assets/bar-chart.json';
+    this.http.get(url).subscribe((response) => {
+      this.chartData = response;
+      console.log(this.chartData);
 
 
-
-    this.echartsOptions = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-          // Use axis to trigger tooltip
-          type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
-        }
-      },
-      legend: {
-        right : 0
-      },
-      grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-      },
-      xAxis: {
-        type: 'category',
-        data: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5']
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [
-        {
-          name: 'Mobile',
-          type: 'bar',
-          stack: 'total',
-          label: {
-            show: false
-          },
-          color: '#6ebdd1',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [2350, 3205, 4250, 2351, 5632]
+      const categories = this.chartData['bar-chart'].map((item: any) => item.category);
+      const seriesData = this.chartData['bar-chart'][0].seris.map((serisItem: any) => ({
+        name: serisItem.name,
+        type: 'bar',
+        stack: 'total',
+        label: {
+          show: false,
         },
-        {
-          name: 'Laptop',
-          type: 'bar',
-          stack: 'total',
-          label: {
-            show: false
-          },
-          color: '#f9ab6c',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [2341, 2583, 1592, 2674, 2323]
+        emphasis: {
+          focus: 'series',
         },
-        {
-          name: 'Computer',
-          type: 'bar',
-          stack: 'total',
-          label: {
-            show: false
+        color: this.getColorBasedOnName(serisItem.name),
+        data: this.chartData['bar-chart'].map((item: any) =>
+          item.seris.find((seris: any) => seris.name === serisItem.name)?.value
+        ),
+      }));
+
+      const legendData = this.chartData['bar-chart'][0].seris.map((serisItem: any) => serisItem.name);
+
+      this.echartsOptions = {
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'shadow',
           },
-          color : '#afc979',
-          emphasis: {
-            focus: 'series'
-          },
-          data: [1212, 5214, 2325, 4235, 2519]
         },
-        
-      ]
-    }
-
-
+        legend: {
+          right: 0,
+          data: legendData,
+        },
+        grid: {
+          left: '3%',
+          right: '4%',
+          bottom: '3%',
+          containLabel: true,
+        },
+        xAxis: {
+          type: 'category',
+          data: categories,
+        },
+        yAxis: {
+          type: 'value',
+        },
+        series: seriesData,
+      };
+    });
   }
 
-
-
-
+  getColorBasedOnName(value: string): string {
+    switch (value) {
+      case 'Mobile':
+        return '#6ebdd1';
+      case 'Laptop':
+        return '#f9ab6c';
+      case 'Computer':
+        return '#afc979'
+      default:
+        return 'gray';
+    }
+  }
 
 }

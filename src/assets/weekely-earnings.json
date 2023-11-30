@@ -1,0 +1,36 @@
+{
+    "weekely-earning" : [
+        {
+            "week-no": 1,
+            "earning": 2
+        },
+        {
+            "week-no": 2,
+            "earning": 5
+        },
+        {
+            "week-no": 3,
+            "earning": 4
+        },
+        {
+            "week-no": 4,
+            "earning": 8
+        },
+        {
+            "week-no": 5,
+            "earning":  3
+        },
+        {
+            "week-no": 6,
+            "earning": 9
+        },
+        {
+            "week-no": 7,
+            "earning": 1
+        },
+        {
+            "week-no": 8,
+            "earning": 5
+        }
+    ]
+}

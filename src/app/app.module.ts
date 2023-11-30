@@ -15,6 +15,7 @@ import { NegativeBarChartComponent } from './dashboard/negative-bar-chart/negati
 import { TimelineComponent } from './dashboard/timeline/timeline.component';
 import { LineChartComponent } from './dashboard/line-chart/line-chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
     
   ],
   providers: [],

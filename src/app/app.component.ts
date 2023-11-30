@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   title = 'angular-dashboard';
+  active = 1;
 
    isLargeScreen!: boolean;
 

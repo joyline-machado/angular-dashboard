@@ -231,8 +231,132 @@
               </div>
   
             </div>
+
+           
+
   
             <nav id="left-sidebar-nav" class="navbar sidebar-nav">
+
+              <!-- <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs sidebar-nav">
+
+                <li [ngbNavItem]="1">
+                  <button ngbNavLink>Menu</button>
+                  <ng-template ngbNavContent>
+                    <ul class="navbar-nav nav nav-pills d-flex flex-column mt-3 w-100">
+  
+                      <li class="nav-item dropdown active">
+                        <a href="" routerLink="dashboard" routerLinkActive="active" class="nav-link has-arrow px-3">
+                          <i class="bi bi-house px-2 text-primary"></i><span>Dashboard</span></a>
+                        <ul class="dropdown-menu">
+                          <li routerlinkactive="active" class="dropdown-item active"><a href="">Analytical</a></li>
+                          <li routerlinkactive="active" class="dropdown-item"><a href="">IoT</a></li>
+                        </ul>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i class="bi bi-grid px-2 text-primary"></i><span>App</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i class="bi bi-folder2-open px-2 text-primary"></i><span>File
+                            Manager</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i class="bi bi-globe px-2 text-primary"></i><span>Blog</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i class="bi bi-diamond px-2 text-primary"></i><span>UI
+                            Elements</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i
+                            class="bi bi-puzzle px-2 text-primary"></i><span>Widgets</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i
+                            class="bi bi-lock px-2 text-primary"></i><span>Authentication</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i
+                            class="bi bi-files px-2 text-primary"></i><span>Pages</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i
+                            class="bi bi-pencil px-2 text-primary"></i><span>Forms</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i class="bi bi-tag px-2 text-primary"></i><span>Tables</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i
+                            class="bi bi-bar-chart px-2 text-primary"></i><span>Charts</span></a>
+                      </li>
+        
+                      <li routerlinkactive="active" class="nav-item">
+                        <a href="" class="nav-link has-arrow px-3"><i class="bi bi-map px-2 text-primary"></i><span>Maps</span></a>
+                      </li>
+        
+                    </ul>
+                  </ng-template>
+                </li>
+
+
+                <li [ngbNavItem]="2">
+                  <button ngbNavLink><i class="bi bi-book text-dark"></i></button>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko
+                      farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts
+                      ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                      helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+                      8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
+                      stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+                    </p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="3">
+                  <button ngbNavLink><i class="bi bi-gear text-dark"></i></button>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
+                      Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
+                      Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
+                      egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
+                      tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+                      magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
+                      neque. Phasellus nec tortor vel tellus pulvinar feugiat.
+                    </p>
+                  </ng-template>
+                </li>
+                <li [ngbNavItem]="4">
+                  <button ngbNavLink><i class="bi bi-help text-dark"></i></button>
+                  <ng-template ngbNavContent>
+                    <p>
+                      Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi.
+                      Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio.
+                      Duis pharetra et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna,
+                      egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec
+                      tristique ipsum euismod facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et
+                      magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget
+                      neque. Phasellus nec tortor vel tellus pulvinar feugiat.
+                    </p>
+                  </ng-template>
+                </li>
+
+              </ul>
+              
+              <div [ngbNavOutlet]="nav" class="mt-2"></div> -->
+              
+              <!-- <pre>Active: {{ active }}</pre> -->
+  
   
               <ul class="nav nav-tabs ">
                 <li class="nav-item ">
