@@ -15,6 +15,8 @@ import { NegativeBarChartComponent } from './dashboard/negative-bar-chart/negati
 import { TimelineComponent } from './dashboard/timeline/timeline.component';
 import { LineChartComponent } from './dashboard/line-chart/line-chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
       echarts: () => import('echarts')
     }),
     HttpClientModule,
+    provideFirebaseApp(() => initializeApp({"projectId":"angular-dashboard-b0325","appId":"1:836644170834:web:90f9edfa91716c0c7dc38b","databaseURL":"https://angular-dashboard-b0325-default-rtdb.firebaseio.com","storageBucket":"angular-dashboard-b0325.appspot.com","apiKey":"AIzaSyDigGQUcTBBgVfQ3K2x0UwtnZx5AxDwesA","authDomain":"angular-dashboard-b0325.firebaseapp.com","messagingSenderId":"836644170834","measurementId":"G-LRMSEJF65E"})),
+    provideDatabase(() => getDatabase()),
     
   ],
   providers: [],
