@@ -1,1 +1,1 @@
-angular-dashboard-beta.vercel.app
+https://angular-dashboard-beta.vercel.app/
