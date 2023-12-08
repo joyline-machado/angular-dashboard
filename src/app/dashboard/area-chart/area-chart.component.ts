@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Database, onValue, ref, set, update } from '@angular/fire/database';
 import { EChartsOption } from 'echarts';
 import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/components';
@@ -9,9 +9,11 @@ import { GridComponent, LegendComponent, TooltipComponent } from 'echarts/compon
   templateUrl: './area-chart.component.html',
   styleUrls: ['./area-chart.component.scss']
 })
-export class AreaChartComponent {
+export class AreaChartComponent implements OnDestroy {
 
   readonly echartsExtentions: any[];
+
+  interval: any;
   // echartsOptions: object = {};
   echartsOptions1: EChartsOption = {};
   echartsOptions2: EChartsOption = {};
@@ -39,6 +41,7 @@ export class AreaChartComponent {
     this.addSalesData();
     this.addVisitsData();
     this.addLikesData();
+
     // this.getData();
     // this.updateData();
     // console.log("getdata",this.getData())
@@ -62,7 +65,11 @@ export class AreaChartComponent {
           trigger: 'axis',
           axisPointer: {
             type: 'line'
-          }
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' earnings';
+          },
+          showContent: true
         },
         xAxis: {
           type: 'category',
@@ -130,7 +137,10 @@ export class AreaChartComponent {
           trigger: 'axis',
           axisPointer: {
             type: 'line'
-          }
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' sales';
+          },
         },
         xAxis: {
           type: 'category',
@@ -189,7 +199,10 @@ export class AreaChartComponent {
           trigger: 'axis',
           axisPointer: {
             type: 'line'
-          }
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' visits';
+          },
         },
         xAxis: {
           type: 'category',
@@ -248,7 +261,10 @@ export class AreaChartComponent {
           trigger: 'axis',
           axisPointer: {
             type: 'line'
-          }
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' likes';
+          },
         },
         xAxis: {
           type: 'category',
@@ -304,7 +320,7 @@ export class AreaChartComponent {
     })
 
     // change chart values after 2 seconds
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.updateEarningData();
       this.updateSalesData();
       this.updateVisitsData();
@@ -312,9 +328,19 @@ export class AreaChartComponent {
       // this.getData();
       this.echartsOptions1 = {
         ...this.echartsOptions1,
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line'
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' earnings';
+          },
+        },
         series: [
           {
             data: this.getEarningData(),
+            // data: this.generateRandomData(),
             type: 'line',
             lineStyle: {
               color: '#f8a45e',
@@ -329,9 +355,19 @@ export class AreaChartComponent {
 
       this.echartsOptions2 = {
         ...this.echartsOptions1,
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line'
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' sales';
+          },
+        },
         series: [
           {
             data: this.getSalesData(),
+            // data: this.generateRandomData(),
             type: 'line',
             lineStyle: {
               color: '#6a5583',
@@ -346,9 +382,19 @@ export class AreaChartComponent {
 
       this.echartsOptions3 = {
         ...this.echartsOptions1,
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line'
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' visits';
+          },
+        },
         series: [
           {
             data: this.getVisitsData(),
+            // data: this.generateRandomData(),
             type: 'line',
             lineStyle: {
               color: '#53b0c8',
@@ -363,9 +409,19 @@ export class AreaChartComponent {
 
       this.echartsOptions4 = {
         ...this.echartsOptions1,
+        tooltip: {
+          trigger: 'axis',
+          axisPointer: {
+            type: 'line'
+          },
+          formatter: function (params: any) {
+            return params[0].data + ' likes';
+          },
+        },
         series: [
           {
             data: this.getLikesData(),
+            // data: this.generateRandomData(),
             type: 'line',
             lineStyle: {
               color: '#5182bd',
@@ -383,6 +439,12 @@ export class AreaChartComponent {
 
   }
 
+  ngOnDestroy(): void {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+  }
+
   generateRandomData() {
     return Array.from({ length: 7 }, () => Math.floor(Math.random() * 10) + 1);
   }
@@ -396,7 +458,7 @@ export class AreaChartComponent {
   }
 
   getEarningData() {
-    const starCountRef = ref(this.database, 'earnings/'+ 'data' );
+    const starCountRef = ref(this.database, 'earnings/' + 'data');
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       this.updatingEarningData = data
@@ -404,10 +466,10 @@ export class AreaChartComponent {
       return data;
     });
     return this.updatingEarningData
-    
+
   }
 
-  updateEarningData(){
+  updateEarningData() {
     update(ref(this.database, 'earnings/'), {
       data: this.generateRandomData(),
     });
@@ -425,7 +487,7 @@ export class AreaChartComponent {
   }
 
   getSalesData() {
-    const starCountRef = ref(this.database, 'sales/'+ 'data' );
+    const starCountRef = ref(this.database, 'sales/' + 'data');
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       this.updatingSalesData = data
@@ -433,10 +495,10 @@ export class AreaChartComponent {
       return data;
     });
     return this.updatingSalesData
-    
+
   }
 
-  updateSalesData(){
+  updateSalesData() {
     update(ref(this.database, 'sales/'), {
       data: this.generateRandomData(),
     });
@@ -454,7 +516,7 @@ export class AreaChartComponent {
   }
 
   getVisitsData() {
-    const starCountRef = ref(this.database, 'visits/'+ 'data' );
+    const starCountRef = ref(this.database, 'visits/' + 'data');
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       this.updatingVisitsData = data
@@ -462,10 +524,10 @@ export class AreaChartComponent {
       return data;
     });
     return this.updatingVisitsData
-    
+
   }
 
-  updateVisitsData(){
+  updateVisitsData() {
     update(ref(this.database, 'visits/'), {
       data: this.generateRandomData(),
     });
@@ -483,7 +545,7 @@ export class AreaChartComponent {
   }
 
   getLikesData() {
-    const starCountRef = ref(this.database, 'likes/'+ 'data' );
+    const starCountRef = ref(this.database, 'likes/' + 'data');
     onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       this.updatingLikesData = data
@@ -491,10 +553,10 @@ export class AreaChartComponent {
       return data;
     });
     return this.updatingLikesData
-    
+
   }
 
-  updateLikesData(){
+  updateLikesData() {
     update(ref(this.database, 'likes/'), {
       data: this.generateRandomData(),
     });

@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { authGuard } from './iot-dashboard/guard/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component : DashboardComponent}
+  
+  { path: '',canActivate: [authGuard], loadChildren: () => import('./main/main.module').then(m => m.MainModule) },
+  { path: 'login', component : LoginComponent},
+  
 ];
 
 @NgModule({

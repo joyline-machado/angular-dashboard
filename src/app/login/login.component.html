@@ -1,0 +1,47 @@
+<div class="d-flex main-container bg-dark outer-border">
+    <div class="col-md-4 col-sm-12 bg-dark">
+
+
+
+    </div>
+
+    <div class="col-md-8 login-background">
+
+    </div>
+
+    <div class="position-absolute form-container">
+        <img src="../../assets/logo-white.svg" alt="" class="mb-4" style="width: 125px;">
+        <div class=" bg-white p-4 shadow-lg border rounded-2">
+
+            <h6 class="mb-4 mt-3 ">Login to your accout</h6>
+
+            <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm)">
+                <div class="mb-3">
+                    <input type="email" class="form-control" formControlName="email" name="email" id="email"
+                        placeholder="Email ID" aria-describedby="emailHelp"  [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched || loginForm.get('email')?.invalid && submitted }" >
+                        <p class="text-danger small mt-1" *ngIf="loginForm.get('email')?.hasError('required') && submitted" >This is required</p>
+                        <p class="text-danger small mt-1" *ngIf="loginForm.get('email')?.hasError('email') && submitted" >Enter valid Email ID</p>
+                </div>
+                <div class="mb-3">
+
+                    <input type="password" class="form-control" formControlName="password" name="password"
+                        placeholder="Password" id="password" [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched || loginForm.get('password')?.invalid && submitted } ">
+                        <p class="text-danger small mt-1" *ngIf="loginForm.get('email')?.hasError('required') && submitted" >This is required</p>
+                </div>
+                <!-- <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div> -->
+                <button type="submit" class="btn btn-primary w-100 text-center text-uppercase">Login</button>
+                <p class="text-danger mt-3 text-center small">{{message}}</p>
+
+                <p class="text-center mt-3"> Forgot password? </p>
+                <p class="text-center">Don't have an account? <a href="">Register</a> </p>
+
+            </form>
+        </div>
+
+    </div>
+
+
+</div>

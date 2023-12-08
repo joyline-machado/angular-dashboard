@@ -1,0 +1,333 @@
+<div class="ms-sm-0 ms-lg-3">
+    <!-- Area Chart -->
+    <app-area-line-chart></app-area-line-chart>
+
+    <!-- Switches -->
+    <div class="row my-4 gy-3">
+        <div class="col-sm-12 col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-0">Security System</h6>
+                            <small class="text-success" style="font-size: 12px;" *ngIf="security">Triggered</small>
+                            <small class="text-danger" style="font-size: 12px;" *ngIf="!security">Loosed</small>
+                        </div>
+                        <button type="button" class="btn btn-outline-danger" *ngIf="security"
+                            (click)="securitySystem()">Loose</button>
+                        <button type="button" class="btn btn-outline-success" *ngIf="!security"
+                            (click)="securitySystem()">Trigger</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-0">Main Gate</h6>
+                            <small class="text-danger" style="font-size: 12px;" *ngIf="gateOn">Opened</small>
+                            <small class="text-success" style="font-size: 12px;" *ngIf="!gateOn">Closed</small>
+                        </div>
+                        <button type="button" class="btn btn-outline-success" *ngIf="gateOn"
+                            (click)="mainGate()">Close</button>
+                        <button type="button" class="btn btn-outline-danger" *ngIf="!gateOn"
+                            (click)="mainGate()">Open</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-4 gy-3">
+        <div class=" col-sm-12 col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-around">
+                        <img src="../../assets/air-conditioner.png" alt="Air Conditioner"
+                            style="width:40px;height: 40px;">
+                        <div class="d-flex flex-column w-75  ps-1">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-2" style="font-size: 15px;">Air Conditioner</h6>
+                                <p class="mb-2 text-success " style="font-size: 14px;">On</p>
+
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1" style="font-size: 13px;">Temprature</p>
+                                <p class="mb-1 text-warning" style="font-size: 13px;">25° C</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1" style="font-size: 13px;">Status</p>
+                                <p class="mb-1 text-warning" style="font-size: 13px;">Cooling On</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-sm-12 col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-around">
+                        <img src="../../assets/fridge.png" alt="Ftidge" style="width:40px;height: 40px;">
+                        <div class="d-flex flex-column w-75  ps-1">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-2" style="font-size: 15px;">Fridge</h6>
+                                <p class="mb-2 text-success " style="font-size: 14px;">On</p>
+
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1" style="font-size: 13px;">Temprature</p>
+                                <p class="mb-1 text-primary" style="font-size: 13px;">20° C</p>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1" style="font-size: 13px;">Status</p>
+                                <p class="mb-1 text-success" style="font-size: 13px;"> Stand By</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-sm-12 col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <div class="d-flex flex-wrap justify-content-around">
+                        <img src="../../assets/washing-machine.png" alt="Washing Machine"
+                            style="width:40px;height: 40px;">
+                        <div class="d-flex flex-column w-75  ps-1">
+                            <div class="d-flex justify-content-between">
+                                <h6 class="mb-2" style="font-size: 15px;">Washing Machine</h6>
+                                <p class="mb-2 text-success " style="font-size: 14px;">On</p>
+
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <p class="mb-1" style="font-size: 13px;">Remaining Time</p>
+                                <p class="mb-1 text-primary" style="font-size: 13px;">01:23:21</p>
+                            </div>
+                            <div class="d-flex justify-content-between mb-4">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-4 gy-3">
+        <div class=" col-sm-12 col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h6 class="mb-4 pb-2">Lights Indoor</h6>
+
+                    <div class="d-flex justify-content-between mt-1 mb-2">
+                        <p><small [ngClass]="{'text-warning' : !kitchen} ">Kitchen</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="kitchen = ! kitchen" *ngIf="kitchen">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="kitchen = ! kitchen" *ngIf="!kitchen">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !dining} ">Dining Room</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="dining = ! dining" *ngIf="dining">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="dining = ! dining" *ngIf="!dining">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !living} ">Living Room</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="living = ! living" *ngIf="living">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="living = ! living" *ngIf="!living">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small class="text-danger">Bed Room</small> </p>
+                        <p><small class="text-danger">Not Connected</small> </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !bathRoom} ">Bath Room</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="bathRoom = ! bathRoom" *ngIf="bathRoom">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="bathRoom = ! bathRoom" *ngIf="!bathRoom">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !storeRoom} ">Store Room</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="storeRoom = ! storeRoom" *ngIf="storeRoom">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="storeRoom = ! storeRoom" *ngIf="!storeRoom">OFF</small>
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-sm-12 col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h6 class="mb-4 pb-2">Lights Outdoor</h6>
+
+                    <div class="d-flex justify-content-between mt-1 mb-2">
+                        <p><small [ngClass]="{'text-warning' : !frontDoor} ">Front Door</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="frontDoor = ! frontDoor" *ngIf="frontDoor">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="frontDoor = ! frontDoor" *ngIf="!frontDoor">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !backDoor} ">Back Door</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="backDoor = ! backDoor" *ngIf="backDoor">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="backDoor = ! backDoor" *ngIf="!backDoor">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !pool} ">Pool</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="pool = ! pool" *ngIf="pool">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="pool = ! pool" *ngIf="!pool">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !garage} ">Garrage</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="garage = ! garage" *ngIf="garage">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="garage = ! garage" *ngIf="!garage">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small class="text-danger">Garden</small> </p>
+                        <p><small class="text-danger">Not Connected</small> </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !mainDoor} ">Main Door</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="mainDoor = ! mainDoor" *ngIf="mainDoor">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="mainDoor = ! mainDoor" *ngIf="!mainDoor">OFF</small>
+                        </p>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class=" col-sm-12 col-md-4">
+            <div class="card border-0 shadow">
+                <div class="card-body">
+                    <h6 class="mb-4 pb-2">Other Appliences</h6>
+
+                    <div class="d-flex justify-content-between mt-1 mb-2">
+                        <p><small [ngClass]="{'text-warning' : !tv} ">Tv</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="tv = ! tv" *ngIf="tv">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="tv = ! tv" *ngIf="!tv">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !appleTv} ">Apple Tv</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="appleTv = ! appleTv" *ngIf="appleTv">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="appleTv = ! appleTv" *ngIf="!appleTv">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !soundSystem} ">Sound System</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="soundSystem = ! soundSystem" *ngIf="soundSystem">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="soundSystem = ! soundSystem" *ngIf="!soundSystem">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !airConditioner} ">Air Conditioner</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="airConditioner = ! airConditioner" *ngIf="airConditioner">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="airConditioner = ! airConditioner" *ngIf="!airConditioner">OFF</small>
+                        </p>
+                    </div>
+
+
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !fridge} ">Fridge</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="fridge = ! fridge" *ngIf="fridge">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="fridge = ! fridge" *ngIf="!fridge">OFF</small>
+                        </p>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-2">
+                        <p><small [ngClass]="{'text-warning' : !washingMachine} ">Washing Machine</small> </p>
+                        <p>
+                            <small class="badge border border-black text-dark fw-normal" style="font-size: 11px;"
+                                (click)="washingMachine = ! washingMachine" *ngIf="washingMachine">ON</small>
+                            <small class="badge border border-warning text-warning fw-normal" style="font-size: 11px;"
+                                (click)="washingMachine = ! washingMachine" *ngIf="!washingMachine">OFF</small>
+                        </p>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>

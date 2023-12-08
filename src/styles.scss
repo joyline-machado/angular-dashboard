@@ -44,6 +44,7 @@ body {
     height: 100vh;
     position: fixed;
     overflow: auto;
+    width: 100vw;
 
     @include for-phone-only() {
         position: relative;

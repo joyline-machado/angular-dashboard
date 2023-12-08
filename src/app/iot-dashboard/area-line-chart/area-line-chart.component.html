@@ -1,0 +1,40 @@
+<div class="row mb-4 gy-3">
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card shadow-sm">
+            <div class="card-body text-dark">
+                <p class="text-uppercase mb-1 fw-normal"><strong>ENERGY USE</strong></p>
+                <h5 class="mb-1 fw-bold">250 kw/h</h5>
+                <small>89% compared to average monthly use</small>
+                
+            </div>
+            <div echarts [options]="echartsOptions1" class="demo-chart" style="height: 50px;"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card shadow-sm">
+            <div class="card-body text-dark">
+                <p class="text-uppercase mb-1 fw-normal"><strong>LIGHTS</strong></p>
+                <h5 class="mb-1 fw-bold">6 Lights are ON</h5>
+                <small>5% less than daily average</small>
+                
+            </div>
+            <div echarts [options]="echartsOptions2" class="demo-chart" style="height: 50px;"></div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card shadow-sm">
+            <div class="card-body text-dark">
+                <p class="text-uppercase mb-1 fw-normal"><strong>DAILY AVG TEMPRATURE</strong></p>
+                <h5 class="mb-1 fw-bold">20° C</h5>
+                <small>Outside Avg temprature is 32° C</small>
+                
+            </div>
+            <div echarts [options]="echartsOptions3" class="demo-chart" style="height: 50px;"></div>
+        </div>
+    </div>
+
+    
+</div>
