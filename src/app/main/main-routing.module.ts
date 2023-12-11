@@ -4,6 +4,8 @@ import { MainComponent } from './main.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { IotDashboardComponent } from '../iot-dashboard/iot-dashboard.component';
 import { InboxComponent } from '../inbox/inbox.component';
+import { ContactCardComponent } from '../contact-card/contact-card.component';
+import { MyProfileComponent } from '../my-profile/my-profile.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'iot', component: IotDashboardComponent },
       { path: 'inbox', component: InboxComponent },
+      { path: 'contact-card', component: ContactCardComponent},
+      { path: 'my-profile', component: MyProfileComponent}
     ]
   },
 

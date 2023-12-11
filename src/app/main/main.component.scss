@@ -76,6 +76,29 @@
     }
 }
 
+.profile {
+    ul {
+        li {
+            .active{
+                background-color: transparent;
+                color: #fff !important;
+            }
+
+            hr{
+                background-color: #999999;
+            }
+            .dropdown-item {
+                color: #999999;
+            }
+
+            .dropdown-item:hover {
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+    }
+}
+
 .dropdown-container {
     right: 0;
     left: auto;

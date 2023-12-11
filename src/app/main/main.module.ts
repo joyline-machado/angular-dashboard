@@ -15,6 +15,8 @@ import { IotDashboardComponent } from '../iot-dashboard/iot-dashboard.component'
 import { AreaLineChartComponent } from '../iot-dashboard/area-line-chart/area-line-chart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TimelineComponent } from '../dashboard/timeline/timeline.component';
+import { InboxComponent } from '../inbox/inbox.component';
+import { ContactCardComponent } from '../contact-card/contact-card.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { TimelineComponent } from '../dashboard/timeline/timeline.component';
     IotDashboardComponent,
     AreaLineChartComponent,
     TimelineComponent,
+    InboxComponent,
+    ContactCardComponent
   ],
   imports: [
     CommonModule,

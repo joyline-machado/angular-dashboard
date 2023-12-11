@@ -218,8 +218,63 @@
                 <img src="../assets/user.png" alt="" class="rounded-circle profile-img">
                 <div>
                   <p class="mb-0">Welcome</p>
-                  <a href="" class="dropdown-toggle text-decoration-none text-secondary"><strong>Alizee
-                      Thomas</strong></a>
+                  <!-- <a href="" class="dropdown-toggle text-decoration-none text-secondary"><strong>Alizee
+                      Thomas</strong></a> -->
+
+                      <div class="dropdown profile">
+                        <a href="" class="dropdown-toggle text-decoration-none text-secondary" data-bs-toggle="dropdown" ><strong>Alizee Thomas</strong>
+                        </a>
+                        <ul class="dropdown-container dropdown-menu bg-dark py-3 px-2 shadow">
+          
+                          <li>
+                            <a class="dropdown-item py-2" href="" routerLink="my-profile" routerLinkActive="active">
+                              <div class="d-flex gap-2">
+                                <i class="bi bi-person"></i>
+                                My Profile
+                              </div>
+                            </a>
+                          </li>
+          
+                          <li>
+                            <a class="dropdown-item py-2" href="" routerLink="inbox" routerLinkActive="active">
+                              <div class="d-flex gap-2">
+                                <i class="bi bi-envelope-open"></i>
+                               Messages
+                              </div>
+                            </a>
+                          </li>
+          
+                          <li>
+                            <a class="dropdown-item py-2" href="#" routerLinkActive="active">
+                              <div class="d-flex gap-2">
+                                <i class="bi bi-gear"></i>
+                               Settings
+                              </div>
+                            </a>
+                          </li>
+
+                          <li><hr class="dropdown-divider mx-2"></li>
+                          
+                          <li>
+                            <a class="dropdown-item py-2" href="#" (click)="onLogout()">
+                              <div class="d-flex gap-2">
+                                <i class="bi bi-power"></i>
+                               Logout
+                              </div>
+                            </a>
+                          </li>
+          
+          
+                        </ul>
+                      </div>
+
+
+
+
+
+
+
+                      
                 </div>
               </div>
 
@@ -404,29 +459,36 @@
 
 
                 <li routerlinkactive="active" class="nav-item ">
-                  <a href="" class="nav-link px-3 dropdown-toggle " data-bs-toggle="collapse"
+                  <a href="" routerLinkActive="active" class="nav-link px-3 dropdown-toggle " data-bs-toggle="collapse"
                     data-bs-target="#dashboard-collapse">
                     <i class="bi bi-house px-2 text-primary"></i><span>Dashboard</span></a>
 
                   <div class="collapse" id="dashboard-collapse">
                     <ul class="btn-toggle-nav  pb-1  list-group sidenav-dropdown ">
-                      <li><a href="#" routerLink="dashboard" routerLinkActive="active" class="dropdown-item sidenav-dropdown-item">Analytical</a></li>
-                      <li><a href="#"  routerLink="iot" routerLinkActive="active"  class="dropdown-item sidenav-dropdown-item">IOT</a></li>
+                      <li><a href="#" routerLink="dashboard" routerLinkActive="active"
+                          class="dropdown-item sidenav-dropdown-item">Analytical</a></li>
+                      <li><a href="#" routerLink="iot" routerLinkActive="active"
+                          class="dropdown-item sidenav-dropdown-item">IOT</a></li>
                     </ul>
                   </div>
 
                 </li>
 
                 <li routerlinkactive="active" class="nav-item ">
-                  <a href="" class="nav-link px-3 dropdown-toggle " data-bs-toggle="collapse"
+                  <a href="" routerLinkActive="active" class="nav-link px-3 dropdown-toggle " data-bs-toggle="collapse"
                     data-bs-target="#app-collapse">
                     <i class="bi bi-grid px-2 text-primary"></i><span>App</span></a>
 
                   <div class="collapse" id="app-collapse">
                     <ul class="btn-toggle-nav  pb-1  list-group sidenav-dropdown ">
-                      <li><a href="#" routerLink="inbox" routerLinkActive="active" class="dropdown-item sidenav-dropdown-item">Inbox</a></li>
-                      <li><a href="#"  routerLink="calendar" routerLinkActive="active"  class="dropdown-item sidenav-dropdown-item">Calendar</a></li>
-                      <li><a href="#"  routerLink="contact-card" routerLinkActive="active"  class="dropdown-item sidenav-dropdown-item">Contact Card</a></li>
+                      <li><a href="#" routerLink="inbox" routerLinkActive="active"
+                          class="dropdown-item sidenav-dropdown-item">Inbox</a></li>
+                      <li><a href="#" routerLink="calendar" routerLinkActive="active"
+                          class="dropdown-item sidenav-dropdown-item">Chat</a></li>
+                      <li><a href="#" routerLink="calendar" routerLinkActive="active"
+                          class="dropdown-item sidenav-dropdown-item">Calendar</a></li>
+                      <li><a href="contact-card" routerLink="contact-card" routerLinkActive="active"
+                          class="dropdown-item sidenav-dropdown-item">Contact Card</a></li>
                     </ul>
                   </div>
 

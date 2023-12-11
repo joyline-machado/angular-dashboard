@@ -16,11 +16,13 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InboxComponent } from './inbox/inbox.component';
+import { ContactCardComponent } from './contact-card/contact-card.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InboxComponent,
+    MyProfileComponent,
     
   ],
   imports: [
